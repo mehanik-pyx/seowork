@@ -1,16 +1,15 @@
 <template>
-  asd
-  <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <ChartTable/>
 </template>
 
 <script>
-  // import HelloWorld from './components/HelloWorld.vue'
+  import ChartTable from './components/ChartTable.vue'
 
   export default {
     name: 'App',
-    // components: {
-    //   HelloWorld
-    // }
+    components: {
+      ChartTable
+    }
   }
 </script>
 

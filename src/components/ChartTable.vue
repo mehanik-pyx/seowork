@@ -4,6 +4,7 @@
 
     <!-- Насколько я понял, Highcharts не даёт возможности менять отображение даты в таблице,
          поэтому добавил сюда таблицу из примера, по хорошему её надо вынести в отдельный компонент-->
+
     <table v-if="tableData" id="datatable">
       <caption>Cool table</caption>
       <thead>
@@ -41,6 +42,7 @@
   import Highcharts from 'highcharts'
   import stockInit from 'highcharts/modules/stock'
   // import response from '../assets/response.json'
+  /*В идеале сделать это в main.js прям ,но тоже не критично*/
   import exportData from 'highcharts/modules/export-data'
   import exportingInit from 'highcharts/modules/exporting'
 
@@ -76,6 +78,10 @@
     methods: {
       request() {
         try {
+          /*В целом ок, но по заданию надл было подключить Vuex и сделать запрос там. Там же в мутациях подготовить данные для
+          * графика и таблицы. Для нас в целом это было бы не критично, но кто-то может даже и не стать смотреть тестовое. Крч чуть повнимательнее читай.
+          *
+          * */
           fetch('https://test-task-for-frontend.herokuapp.com/data')
             .then(res => res.json())
             .then(data => {
@@ -84,6 +90,7 @@
               console.log(data.items);
             })
         } catch (e) {
+
           console.log(e)
         }
       },
@@ -103,6 +110,7 @@
             return i
           });
         })
+        /*Некоторые проверяющие в тестовых могут ревностно относиться к оставленным консоль логами. когда ты обратаываешь ошибки консолем именно в тестовых заданиях еще ок, а так могут придраться. Крч я бы убирал за собой перед деплоем.*/
         console.log(items)
         return items
       },

@@ -38,21 +38,10 @@
 </template>
 
 <script>
-  import {Chart} from 'highcharts-vue'
   import Highcharts from 'highcharts'
-  import stockInit from 'highcharts/modules/stock'
-  // import response from '../assets/response.json'
-  /*В идеале сделать это в main.js прям ,но тоже не критично*/
-  import exportData from 'highcharts/modules/export-data'
-  import exportingInit from 'highcharts/modules/exporting'
-
-  exportingInit(Highcharts)
-  exportData(Highcharts)
-  stockInit(Highcharts)
 
   export default {
     name: "ChartTable",
-    components: {Chart},
     data() {
       return {
         chartOptions: {
@@ -182,7 +171,7 @@
   background: #f1f7ff;
 }
 
-.sort {
+/*.sort {
   text-decoration: underline;
-}
+}*/
 </style>

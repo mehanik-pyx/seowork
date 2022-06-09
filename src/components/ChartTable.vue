@@ -90,7 +90,6 @@
         return Highcharts.dateFormat('%A, %b %e, %Y', timestamp)
       },
       chartMapper(items) {
-        console.log(items)
         items.forEach((item) => {
           item.name = this.capitalizeFirstLetter(item.name)
           item.data.map((i) => {
@@ -99,8 +98,6 @@
             return i
           });
         })
-        /*Некоторые проверяющие в тестовых могут ревностно относиться к оставленным консоль логами. когда ты обратаываешь ошибки консолем именно в тестовых заданиях еще ок, а так могут придраться. Крч я бы убирал за собой перед деплоем.*/
-        console.log(items)
         return items
       },
 
